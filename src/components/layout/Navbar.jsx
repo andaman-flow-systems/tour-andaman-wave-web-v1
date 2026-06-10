@@ -52,9 +52,6 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar__actions">
-          <a href={`tel:${siteInfo.phone.replace(/\s/g, '')}`} className="navbar__phone">
-            📞 {siteInfo.phone}
-          </a>
           <Link to="/booking" className="btn btn-primary navbar__cta">
             Book Now
           </Link>
