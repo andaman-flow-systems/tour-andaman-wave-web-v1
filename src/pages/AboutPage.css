@@ -1,0 +1,112 @@
+.about-hero {
+  background: linear-gradient(120deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
+  color: #fff;
+}
+
+.about-hero__inner {
+  padding: 64px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-hero__inner h1 {
+  color: #fff;
+  margin: 4px 0;
+  max-width: 760px;
+}
+
+.about-hero__inner p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 620px;
+}
+
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-story__media img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+}
+
+.about-mission__card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+
+.about-mission__icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.team-card {
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 18px;
+}
+
+.team-card img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 14px;
+}
+
+.team-card h3 {
+  margin-bottom: 2px;
+}
+
+.team-card__role {
+  display: block;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.team-card p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.certification-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.certification-card__icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.certification-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+@media (max-width: 900px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

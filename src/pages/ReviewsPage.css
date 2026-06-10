@@ -1,0 +1,126 @@
+.reviews-hero {
+  background: linear-gradient(120deg, var(--bg-dark) 0%, var(--primary-dark) 100%);
+  color: #fff;
+}
+
+.reviews-hero__inner {
+  padding: 64px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.reviews-hero__inner h1 {
+  color: #fff;
+  margin: 4px 0;
+}
+
+.reviews-summary {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 28px 36px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reviews-summary__score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.reviews-summary__score strong {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.reviews-summary__score span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reviews-summary .rating-stars {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.reviews-summary .rating-stars__value {
+  color: #fff;
+}
+
+.reviews-summary__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 240px;
+}
+
+.reviews-summary__bar-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 24px;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.reviews-summary__bar-row:hover,
+.reviews-summary__bar-row--active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reviews-summary__bar {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.reviews-summary__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.reviews-filter-note {
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.reviews-filter-note button {
+  border: none;
+  background: none;
+  color: var(--primary);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: inherit;
+}
+
+@media (max-width: 768px) {
+  .reviews-summary {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .reviews-summary__bars {
+    width: 100%;
+  }
+}

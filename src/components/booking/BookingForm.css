@@ -1,0 +1,132 @@
+.booking-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.booking-form__section h3 {
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.booking-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.booking-form__full {
+  grid-column: 1 / -1;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 400;
+  color: var(--dark);
+  width: 100%;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 1px;
+}
+
+.booking-form textarea {
+  resize: vertical;
+}
+
+.booking-form__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+}
+
+.booking-form__summary div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.booking-form__summary strong {
+  color: var(--dark);
+  font-size: 1rem;
+}
+
+.booking-form__summary-total strong {
+  color: var(--secondary);
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+
+.booking-form__disclaimer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--gray-light);
+  margin: 0;
+}
+
+.booking-form__error {
+  color: #dc2626;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+.booking-form__success {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 32px;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.booking-form__success-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.booking-form__success-note {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--gray-light);
+}
+
+@media (max-width: 640px) {
+  .booking-form {
+    padding: 22px;
+  }
+
+  .booking-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

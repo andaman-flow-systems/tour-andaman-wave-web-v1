@@ -1,0 +1,39 @@
+.sticky-book-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sticky-book-bar {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 10px 14px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    z-index: 95;
+    box-shadow: 0 -6px 20px rgba(15, 23, 42, 0.08);
+  }
+
+  .sticky-book-bar__call {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--dark);
+    background: var(--bg-alt);
+    border-radius: 999px;
+    padding: 0 18px;
+  }
+
+  .sticky-book-bar__cta {
+    flex: 1;
+  }
+}

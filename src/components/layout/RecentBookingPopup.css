@@ -1,0 +1,74 @@
+.recent-booking {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 14px 36px 14px 16px;
+  max-width: 320px;
+  z-index: 90;
+  transform: translateY(140%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.recent-booking--visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.recent-booking__icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.recent-booking__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recent-booking__body p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--dark);
+}
+
+.recent-booking__tour {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.recent-booking__time {
+  font-size: 0.72rem;
+  color: var(--gray-light);
+}
+
+.recent-booking__close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: none;
+  color: var(--gray-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 2px;
+}
+
+@media (max-width: 768px) {
+  .recent-booking {
+    left: 12px;
+    right: 12px;
+    bottom: 80px;
+    max-width: none;
+  }
+}

@@ -1,0 +1,46 @@
+.cta-banner {
+  background: linear-gradient(120deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+}
+
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 48px 20px;
+  flex-wrap: wrap;
+}
+
+.cta-banner__inner h2 {
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.cta-banner__inner p {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 480px;
+}
+
+.cta-banner__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .cta-banner__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-banner__actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cta-banner__actions .btn {
+    flex: 1;
+  }
+}
