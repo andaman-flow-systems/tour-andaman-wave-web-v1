@@ -9,7 +9,7 @@
   inset: 0;
   background:
     linear-gradient(180deg, rgba(8, 47, 56, 0.45) 0%, rgba(8, 47, 56, 0.75) 100%),
-    url('../../assets/hero-bg.svg') center/cover no-repeat;
+    url('/hero-bg.svg') center/cover no-repeat;
   z-index: -1;
 }
 

@@ -32,3 +32,9 @@
   font-size: 0.92rem;
   margin: 0;
 }
+
+.why-choose__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
