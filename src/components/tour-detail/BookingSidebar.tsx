@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
+import { MessageCircle, Users } from 'lucide-react'
 import { siteInfo } from '@/lib/siteData'
 import TrustBadges from '@/components/common/TrustBadges'
 import type { Tour } from '@/lib/types'
@@ -50,7 +51,7 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
       )}
       {tour.bookedToday != null && (
         <p className="booking-sidebar__activity">
-          👥 {tour.bookedToday} people booked this tour today
+          <Users size={16} style={{display:'inline', verticalAlign:'middle'}}/> {tour.bookedToday} people booked this tour today
         </p>
       )}
 
@@ -76,13 +77,8 @@ export default function BookingSidebar({ tour }: BookingSidebarProps) {
         </div>
 
         <button type="submit" className="btn btn-primary btn-block">Book Now</button>
-        <a
-          href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(`Hi! I have a question about the "${tour.title}" tour.`)}`}
-          target="_blank"
-          rel="noreferrer"
-          className="btn btn-ghost btn-block"
-        >
-          💬 Ask a Question
+        <a href={`https://wa.me/${siteInfo.whatsapp}`} target="_blank" rel="noreferrer" className="btn btn-outline btn-block">
+          <MessageCircle size={18} style={{marginRight: 8, display: 'inline-block', verticalAlign: 'middle'}}/> Ask a Question
         </a>
       </form>
 

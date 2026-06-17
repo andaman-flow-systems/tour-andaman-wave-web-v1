@@ -2,10 +2,11 @@
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  box-shadow: var(--shadow-sm);
 }
 
 .social-proof__header {
@@ -15,7 +16,7 @@
   gap: 12px;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 16px;
+  padding-bottom: 18px;
 }
 
 .social-proof__header > div {
@@ -26,40 +27,44 @@
 
 .social-proof__header strong {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  color: var(--dark);
 }
 
 .social-proof__logo {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  color: var(--dark);
 }
 
 .social-proof__logo--ta {
-  color: #34e0a1;
-  background: #00352c;
-  padding: 6px 12px;
+  color: #fff;
+  background: #34e0a1;
+  padding: 8px 16px;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(52, 224, 161, 0.3);
 }
 
 .social-proof__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .social-proof__review {
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 .social-proof__review img {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  border: 2px solid var(--border);
 }
 
 .social-proof__review-head {
@@ -70,33 +75,36 @@
 }
 
 .social-proof__review-head strong {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  color: var(--dark);
 }
 
 .social-proof__review-head span {
-  font-size: 0.75rem;
-  color: var(--gray-light);
+  font-size: 0.8rem;
+  color: var(--gray);
 }
 
 .social-proof__review p {
-  font-size: 0.85rem;
-  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin: 6px 0 0;
+  line-height: 1.5;
 }
 
 .social-proof__ta-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .social-proof__ta-badge {
   display: inline-flex;
   align-self: flex-start;
-  background: var(--accent);
-  color: var(--dark);
+  background: rgba(8, 145, 178, 0.1);
+  color: var(--primary-dark);
   font-weight: 700;
-  font-size: 0.78rem;
-  padding: 6px 12px;
+  font-size: 0.82rem;
+  padding: 8px 16px;
   border-radius: 999px;
 }
 
@@ -110,11 +118,11 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  font-size: 0.88rem;
+  gap: 10px;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--gray);
-  margin-top: 4px;
+  margin-top: 8px;
 }
 
 @media (max-width: 900px) {

@@ -1,17 +1,60 @@
-import type { Metadata } from 'next'
+'use client'
+
+import { useRef } from 'react'
 import SectionHeading from '@/components/common/SectionHeading'
 import CTABanner from '@/components/common/CTABanner'
 import { siteInfo, teamMembers, certifications } from '@/lib/siteData'
+import { Award, FileCheck, Waves, ShieldCheck } from 'lucide-react'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './page.css'
 
-export const metadata: Metadata = {
-  title: 'About Us',
-  description: `Learn about ${siteInfo.name} — a locally owned Phuket tour operator since ${siteInfo.founded}, our mission, our team and our certifications.`,
-}
+gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutPage() {
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(() => {
+    const el = pageRef.current
+    if (!el) return
+
+    // Hero animations
+    gsap.from('.about-hero__inner > *', {
+      y: 30, opacity: 0, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.2
+    })
+
+    // Story animations
+    gsap.from('.about-story__media', {
+      scrollTrigger: { trigger: '.about-story', start: 'top 80%' },
+      x: -40, opacity: 0, duration: 1, ease: 'power3.out'
+    })
+    gsap.from('.about-story__content > *', {
+      scrollTrigger: { trigger: '.about-story', start: 'top 80%' },
+      x: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out'
+    })
+
+    // Mission/Vision
+    gsap.from('.about-mission__card', {
+      scrollTrigger: { trigger: '.about-mission', start: 'top 80%' },
+      y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out'
+    })
+
+    // Team
+    gsap.from('.team-card', {
+      scrollTrigger: { trigger: '.team-card', start: 'top 85%' },
+      y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out'
+    })
+
+    // Certifications
+    gsap.from('.certification-card', {
+      scrollTrigger: { trigger: '.certifications', start: 'top 85%' },
+      scale: 0.9, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'back.out(1.4)'
+    })
+  }, { scope: pageRef })
+
   return (
-    <>
+    <div ref={pageRef}>
       <section className="about-hero">
         <div className="container about-hero__inner">
           <span className="badge">About {siteInfo.name}</span>
@@ -98,12 +141,15 @@ export default function AboutPage() {
             description="Your safety is our top priority. We meet all local regulations and maintain comprehensive insurance for every guest."
           />
           <div className="grid grid-4 certifications">
-            {certifications.map((cert) => (
-              <div className="certification-card" key={cert.name}>
-                <span className="certification-card__icon">{cert.icon}</span>
-                <p>{cert.name}</p>
-              </div>
-            ))}
+            {certifications.map((cert, index) => {
+              const icons = [<Award key={0} size={32} strokeWidth={1.5} color="var(--primary)" />, <FileCheck key={1} size={32} strokeWidth={1.5} color="var(--primary)" />, <Waves key={2} size={32} strokeWidth={1.5} color="var(--primary)" />, <ShieldCheck key={3} size={32} strokeWidth={1.5} color="var(--primary)" />]
+              return (
+                <div className="certification-card" key={cert.name}>
+                  <span className="certification-card__icon">{icons[index]}</span>
+                  <p>{cert.name}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -114,6 +160,6 @@ export default function AboutPage() {
         primaryLabel="View Our Tours"
         primaryTo="/tours"
       />
-    </>
+    </div>
   )
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { siteInfo } from '@/lib/siteData'
+import Logo from '@/components/common/Logo'
 import './Navbar.css'
 
 const links = [
@@ -30,7 +31,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <Link href="/" className="navbar__logo" onClick={() => setOpen(false)}>
-          <span className="navbar__logo-mark">🌴</span>
+          <Logo size={38} />
           <span className="navbar__logo-text">{siteInfo.name}</span>
         </Link>
 

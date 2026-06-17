@@ -12,15 +12,15 @@ import type {
 } from './types'
 
 export const siteInfo: SiteInfo = {
-  name: 'Andaman Wave Tours',
-  tagline: 'Your trusted local guide to Phuket adventures',
+  name: 'Sapphire Horizons',
+  tagline: 'Premium island escapes and tranquil adventures',
   phone: '+66 81 234 5678',
   whatsapp: '66812345678', // numeric, no symbols, used for wa.me links
-  email: 'hello@andamanwavetours.com',
+  email: 'hello@sapphirehorizons.com',
   address: '99/1 Patak Road, Karon, Muang, Phuket 83100, Thailand',
-  facebook: 'https://facebook.com/andamanwavetours',
-  instagram: 'https://instagram.com/andamanwavetours',
-  line: '@andamanwave',
+  facebook: 'https://facebook.com/sapphirehorizons',
+  instagram: 'https://instagram.com/sapphirehorizons',
+  line: '@sapphirehorizons',
   mapEmbedSrc:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124758.5!2d98.3!3d7.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30502984831be861%3A0xf12cdc1cb2a0260c!2sPhuket!5e0!3m2!1sen!2sth!4v1700000000000',
   founded: 2012,
@@ -29,11 +29,8 @@ export const siteInfo: SiteInfo = {
   rating: 4.9,
 }
 
-// Real-world business registration / licensing details, displayed in the
-// footer and on trust badges to reassure travelers they are booking with a
-// legitimate, regulated operator.
 export const businessInfo: BusinessInfo = {
-  legalName: 'Andaman Wave Tours Co., Ltd.',
+  legalName: 'Sapphire Horizons Co., Ltd.',
   registrationNumber: 'Company Registration No. 0835563XXXXX (Phuket, Thailand)',
   tatLicense: 'TAT License No. 34/0XXXX',
   taxId: 'Tax ID: 3-9999-00XXX-XX-X',
@@ -78,32 +75,26 @@ export const tripAdvisorInfo: TripAdvisorInfo = {
 
 export const whyChooseUs: WhyChooseUsItem[] = [
   {
-    icon: '🛡️',
     title: 'Licensed & Insured',
     description: 'Fully licensed by the Tourism Authority of Thailand with comprehensive guest insurance on every tour.',
   },
   {
-    icon: '⭐',
     title: '4.9/5 Average Rating',
     description: 'Rated excellent by thousands of travelers across TripAdvisor, Google and Facebook.',
   },
   {
-    icon: '🚐',
     title: 'Free Hotel Pickup',
     description: 'Hassle-free door-to-door transfers from your hotel in most areas of Phuket.',
   },
   {
-    icon: '👨‍✈️',
     title: 'Expert Local Guides',
     description: 'Friendly, English-speaking guides who know Phuket inside and out.',
   },
   {
-    icon: '💳',
     title: 'Best Price Guarantee',
     description: 'Transparent pricing with no hidden fees, plus free cancellation up to 24 hours before.',
   },
   {
-    icon: '📞',
     title: '24/7 Support',
     description: 'Our team is always available before, during and after your tour via phone or WhatsApp.',
   },
@@ -149,8 +140,8 @@ export const recentBookings: RecentBooking[] = [
 ]
 
 export const certifications: Certification[] = [
-  { name: 'Tourism Authority of Thailand (TAT) Licensed', icon: '🏅' },
-  { name: 'Thai Travel Agents Association Member', icon: '📜' },
-  { name: 'Department of Marine and Coastal Resources Certified', icon: '🌊' },
-  { name: 'Full Guest & Liability Insurance', icon: '🛡️' },
+  { name: 'TAT Licensed Operator' },
+  { name: 'SHA Plus+ Certified' },
+  { name: 'TripAdvisor Certificate of Excellence' },
+  { name: 'Full Guest & Liability Insurance' },
 ]

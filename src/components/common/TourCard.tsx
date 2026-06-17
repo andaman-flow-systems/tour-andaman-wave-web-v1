@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import RatingStars from './RatingStars'
+import RatingStars from '@/components/common/RatingStars'
+import { Clock } from 'lucide-react'
 import type { Tour } from '@/lib/types'
 import './TourCard.css'
 
@@ -28,7 +29,7 @@ export default function TourCard({ tour }: TourCardProps) {
           ))}
         </ul>
         <div className="tour-card__meta">
-          <span className="tour-card__duration">⏱ {duration}</span>
+          <span className="tour-card__duration"><Clock size={14} style={{display:'inline', verticalAlign:'middle'}}/> {duration}</span>
           {seatsLeft != null && seatsLeft <= 5 && (
             <span className="tour-card__seats">🔥 Only {seatsLeft} spots left</span>
           )}

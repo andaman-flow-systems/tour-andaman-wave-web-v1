@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { siteInfo } from '@/lib/siteData'
+import { MessageCircle } from 'lucide-react'
 import './CTABanner.css'
 
 interface CTABannerProps {
@@ -29,8 +30,9 @@ export default function CTABanner({
             target="_blank"
             rel="noreferrer"
             className="btn btn-outline"
+            style={{ display: 'flex', alignItems: 'center', gap: '8px' }}
           >
-            💬 Chat on WhatsApp
+            <MessageCircle size={18} /> Chat on WhatsApp
           </a>
         </div>
       </div>

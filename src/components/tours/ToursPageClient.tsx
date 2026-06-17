@@ -1,12 +1,17 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import TourCard from '@/components/common/TourCard'
 import CTABanner from '@/components/common/CTABanner'
 import TourFilters, { type SortOption } from './TourFilters'
 import { tours, priceRanges } from '@/lib/toursData'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './ToursPageClient.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function ToursPageClient() {
   const router = useRouter()
@@ -69,8 +74,26 @@ export default function ToursPageClient() {
     return result
   }, [activeCategory, destination, durationType, priceRangeIndex, search, sortBy])
 
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(() => {
+    const el = pageRef.current
+    if (!el) return
+
+    // Hero animations
+    gsap.from('.tours-hero__inner > *', {
+      y: 30, opacity: 0, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.2
+    })
+
+    // Filter and Tour cards
+    gsap.from('.tour-card', {
+      scrollTrigger: { trigger: '.tour-card', start: 'top 85%' },
+      y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out'
+    })
+  }, { scope: pageRef, dependencies: [filteredTours] })
+
   return (
-    <>
+    <div ref={pageRef}>
       <section className="tours-hero">
         <div className="container tours-hero__inner">
           <span className="badge">All Tours</span>
@@ -121,6 +144,6 @@ export default function ToursPageClient() {
         primaryLabel="Plan My Trip"
         primaryTo="/contact"
       />
-    </>
+    </div>
   )
 }

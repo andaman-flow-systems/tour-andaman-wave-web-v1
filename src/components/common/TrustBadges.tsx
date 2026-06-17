@@ -1,11 +1,12 @@
 import { businessInfo } from '@/lib/siteData'
+import { Building, Lock, ShieldCheck, CreditCard } from 'lucide-react'
 import './TrustBadges.css'
 
 const badges = [
-  { icon: '🏛️', label: 'Licensed Tour Operator', sub: businessInfo.tatLicense },
-  { icon: '🔒', label: 'Secure Booking', sub: '256-bit SSL encrypted' },
-  { icon: '🛡️', label: 'Fully Insured', sub: 'Guest & liability cover' },
-  { icon: '💳', label: 'No Hidden Fees', sub: 'Pay later available' },
+  { icon: <Building size={24} strokeWidth={1.5} />, label: 'Licensed Tour Operator', sub: businessInfo.tatLicense },
+  { icon: <Lock size={24} strokeWidth={1.5} />, label: 'Secure Booking', sub: '256-bit SSL encrypted' },
+  { icon: <ShieldCheck size={24} strokeWidth={1.5} />, label: 'Fully Insured', sub: 'Guest & liability cover' },
+  { icon: <CreditCard size={24} strokeWidth={1.5} />, label: 'No Hidden Fees', sub: 'Pay later available' },
 ]
 
 interface TrustBadgesProps {

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { siteInfo } from '@/lib/siteData'
+import { Phone, MessageCircle, Mail } from 'lucide-react'
 import './ContactTeaser.css'
 
 interface ContactTeaserProps {
@@ -20,21 +21,21 @@ export default function ContactTeaser({ id }: ContactTeaserProps) {
         </div>
         <div className="contact-teaser__cards">
           <a className="contact-teaser__card" href={`tel:${siteInfo.phone.replace(/\s/g, '')}`}>
-            <span className="contact-teaser__icon">📞</span>
+            <span className="contact-teaser__icon"><Phone size={24} strokeWidth={1.5} color="var(--primary)" /></span>
             <div>
               <strong>Call Us</strong>
               <span>{siteInfo.phone}</span>
             </div>
           </a>
           <a className="contact-teaser__card" href={`https://wa.me/${siteInfo.whatsapp}`} target="_blank" rel="noreferrer">
-            <span className="contact-teaser__icon">💬</span>
+            <span className="contact-teaser__icon"><MessageCircle size={24} strokeWidth={1.5} color="var(--primary)" /></span>
             <div>
               <strong>WhatsApp</strong>
               <span>Chat with us instantly</span>
             </div>
           </a>
           <a className="contact-teaser__card" href={`mailto:${siteInfo.email}`}>
-            <span className="contact-teaser__icon">✉️</span>
+            <span className="contact-teaser__icon"><Mail size={24} strokeWidth={1.5} color="var(--primary)" /></span>
             <div>
               <strong>Email</strong>
               <span>{siteInfo.email}</span>

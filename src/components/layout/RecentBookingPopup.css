@@ -1,74 +1,94 @@
 .recent-booking {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
+  left: 24px;
+  bottom: 24px;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  background: #fff;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  padding: 14px 36px 14px 16px;
-  max-width: 320px;
+  padding: 16px 40px 16px 20px;
+  max-width: 340px;
   z-index: 90;
-  transform: translateY(140%);
+  transform: translateY(140%) scale(0.95);
   opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
   pointer-events: none;
 }
 
 .recent-booking--visible {
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   opacity: 1;
   pointer-events: auto;
 }
 
 .recent-booking__icon {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   flex-shrink: 0;
+  background: rgba(16, 185, 129, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .recent-booking__body {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .recent-booking__body p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--dark);
 }
 
 .recent-booking__tour {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--primary);
 }
 
 .recent-booking__time {
-  font-size: 0.72rem;
-  color: var(--gray-light);
+  font-size: 0.75rem;
+  color: var(--gray);
+  font-weight: 500;
 }
 
 .recent-booking__close {
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   border: none;
-  background: none;
-  color: var(--gray-light);
-  font-size: 0.85rem;
+  background: rgba(8, 145, 178, 0.05);
+  color: var(--gray);
+  font-size: 0.9rem;
   cursor: pointer;
-  padding: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.recent-booking__close:hover {
+  background: var(--primary);
+  color: #fff;
 }
 
 @media (max-width: 768px) {
   .recent-booking {
-    left: 12px;
-    right: 12px;
-    bottom: 80px;
+    left: 16px;
+    right: 16px;
+    bottom: 84px;
     max-width: none;
   }
 }

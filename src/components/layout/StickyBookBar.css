@@ -6,17 +6,18 @@
   .sticky-book-bar {
     display: flex;
     align-items: stretch;
-    gap: 10px;
+    gap: 12px;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
     border-top: 1px solid var(--border);
-    padding: 10px 14px;
-    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    padding: 12px 16px;
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
     z-index: 95;
-    box-shadow: 0 -6px 20px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 -10px 40px rgba(8, 145, 178, 0.1);
   }
 
   .sticky-book-bar__call {
@@ -24,13 +25,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
     font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--dark);
-    background: var(--bg-alt);
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    background: rgba(8, 145, 178, 0.08);
+    border: 1px solid rgba(8, 145, 178, 0.15);
     border-radius: 999px;
-    padding: 0 18px;
+    padding: 0 20px;
+    transition: background 0.2s;
+  }
+
+  .sticky-book-bar__call:hover {
+    background: rgba(8, 145, 178, 0.15);
   }
 
   .sticky-book-bar__cta {

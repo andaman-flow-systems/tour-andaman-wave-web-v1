@@ -6,6 +6,12 @@ import RatingStars from '@/components/common/RatingStars'
 import CTABanner from '@/components/common/CTABanner'
 import SocialProof from '@/components/common/SocialProof'
 import { testimonials, getAverageRating } from '@/lib/testimonialsData'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from 'react'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function ReviewsContent() {
   const [filter, setFilter] = useState(0) // 0 = all
@@ -18,8 +24,26 @@ export default function ReviewsContent() {
 
   const filtered = filter === 0 ? testimonials : testimonials.filter((t) => t.rating === filter)
 
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(() => {
+    const el = pageRef.current
+    if (!el) return
+
+    // Hero animations
+    gsap.from('.reviews-hero__inner > *', {
+      y: 30, opacity: 0, duration: 1, stagger: 0.2, ease: 'power3.out', delay: 0.2
+    })
+
+    // Reviews
+    gsap.from('.testimonial-card', {
+      scrollTrigger: { trigger: '.grid', start: 'top 85%' },
+      y: 40, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out'
+    })
+  }, { scope: pageRef, dependencies: [filtered] })
+
   return (
-    <>
+    <div ref={pageRef}>
       <section className="reviews-hero">
         <div className="container reviews-hero__inner">
           <span className="badge">Guest Reviews</span>
@@ -83,6 +107,6 @@ export default function ReviewsContent() {
         primaryLabel="Book Your Next Tour"
         primaryTo="/tours"
       />
-    </>
+    </div>
   )
 }

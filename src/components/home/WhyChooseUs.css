@@ -2,39 +2,50 @@
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
+  padding: 36px 28px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .why-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-md);
 }
 
 .why-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: var(--bg-alt);
+  background: rgba(8, 145, 178, 0.08);
+  color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
-  margin: 0 auto 16px;
+  font-size: 1.8rem;
+  margin: 0 auto 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.why-card:hover .why-card__icon {
+  transform: scale(1.1);
+  background: var(--primary);
+  color: #fff;
 }
 
 .why-card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
 }
 
 .why-card p {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   margin: 0;
+  line-height: 1.6;
 }
 
 .why-choose__more {
   display: flex;
   justify-content: center;
-  margin-top: 36px;
+  margin-top: 48px;
 }

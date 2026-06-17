@@ -90,7 +90,7 @@ export interface TripAdvisorInfo {
 }
 
 export interface WhyChooseUsItem {
-  icon: string
+  icon?: string
   title: string
   description: string
 }
@@ -111,7 +111,7 @@ export interface RecentBooking {
 
 export interface Certification {
   name: string
-  icon: string
+  icon?: string
 }
 
 export interface Testimonial {

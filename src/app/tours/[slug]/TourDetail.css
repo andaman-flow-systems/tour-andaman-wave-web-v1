@@ -1,25 +1,41 @@
 .tour-detail-hero {
-  background: var(--bg-alt);
-  border-bottom: 1px solid var(--border);
-  padding: 28px 0;
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 60px 0 40px;
+}
+
+.tour-detail-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 20, 40, 0.5) 0%, rgba(0, 10, 20, 0.9) 100%);
+  z-index: 1;
+}
+
+.tour-detail-hero .container {
+  position: relative;
+  z-index: 2;
 }
 
 .breadcrumb {
   font-size: 0.82rem;
-  color: var(--gray-light);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 14px;
 }
 
 .breadcrumb a {
-  color: var(--gray-light);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .breadcrumb a:hover {
-  color: var(--primary);
+  color: #fff;
 }
 
 .tour-detail-hero h1 {
   margin: 10px 0 14px;
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .tour-detail-hero__meta {
@@ -28,8 +44,9 @@
   gap: 18px;
   align-items: center;
   font-size: 0.9rem;
-  color: var(--gray);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .tour-detail__layout {

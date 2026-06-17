@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { MapPin, Clock, Users } from 'lucide-react'
 import RatingStars from '@/components/common/RatingStars'
 import TestimonialCard from '@/components/common/TestimonialCard'
 import TourCard from '@/components/common/TourCard'
@@ -50,7 +51,10 @@ export default async function TourDetailPage({ params }: TourDetailPageProps) {
 
   return (
     <>
-      <section className="tour-detail-hero">
+      <section 
+        className="tour-detail-hero" 
+        style={{ backgroundImage: `url(${tour.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
         <div className="container">
           <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link href="/">Home</Link> / <Link href="/tours">Tours</Link> / <span>{tour.title}</span>
@@ -59,9 +63,9 @@ export default async function TourDetailPage({ params }: TourDetailPageProps) {
           <h1>{tour.title}</h1>
           <div className="tour-detail-hero__meta">
             <RatingStars rating={tour.rating} reviewsCount={tour.reviewsCount} />
-            <span>⏱ {tour.duration}</span>
-            <span>👥 {tour.groupSize}</span>
-            <span>📍 {tour.departure}</span>
+            <span><Clock size={16} style={{display:'inline', verticalAlign:'middle'}}/> {tour.duration}</span>
+            <span><Users size={16} style={{display:'inline', verticalAlign:'middle'}}/> {tour.groupSize}</span>
+            <span><MapPin size={16} style={{display:'inline', verticalAlign:'middle'}}/> {tour.departure}</span>
           </div>
         </div>
       </section>

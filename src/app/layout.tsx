@@ -8,11 +8,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Andaman Wave Tours | Phuket Tours & Activities',
-    template: '%s | Andaman Wave Tours',
+    default: 'Sapphire Horizons | Luxury Phuket Island Escapes',
+    template: '%s | Sapphire Horizons',
   },
   description:
-    'Book unforgettable Phuket tours: Phi Phi Islands, James Bond Island, Khao Sok, sunset cruises and more. Free hotel pickup, local guides, best price guarantee.',
+    'Experience the pinnacle of tropical luxury. Private yacht charters, exclusive island retreats, sunset cruises and bespoke cultural tours in Phuket and the Andaman Sea.',
 }
 
 export default function RootLayout({
